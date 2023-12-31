@@ -1,122 +1,65 @@
 import React from "react";
 import { Box, Grid, Typography, Link } from "@mui/material";
 
+const footerColumns = [
+  {
+    heading: "Doormat Navigation",
+    links: ["Home", "About", "Menu", "Reservations", "Order Online", "Login"],
+  },
+  {
+    heading: "Contact Us",
+    links: ["phone number", "email", "address"],
+  },
+  {
+    heading: "Social Media",
+    links: ["Facebook", "Instagram", "Twitter", "Trip Advisor"],
+  },
+  // Add more columns as needed
+];
+
 function Footer() {
   return (
     <footer>
-      <Box sx={{ flexGrow: 1, padding: 3 }}>
+      <Box
+        sx={{
+          flexGrow: 1,
+          padding: 3,
+          backgroundColor: "secondary.contrastText",
+          textAlign: "center",
+          width: "100%",
+        }}
+      >
         <Grid container spacing={2}>
           {/* Empty left column */}
-          <Grid item xs={2} sm={2} />
+          <Grid item xs={0} sm={2} />
 
           {/* Image on the left */}
-          <Grid item xs={8} sm={2}>
+          <Grid item xs={12} sm={2}>
             {/* Replace with your actual image */}
             <img src="Logo.svg" alt="Brand" style={{ maxWidth: "100%" }} />
           </Grid>
 
           {/* Right side - Menu Items */}
-          {/* Column 1 */}
-          <Grid item xs={8} sm={2}>
-            <Typography variant="h6" gutterBottom>
-              Column 1 Heading
-            </Typography>
-            <Box>
-              <Link
-                href="#"
-                variant="subtitle1"
-                color="inherit"
-                display="block"
-              >
-                Menu Item 1
-              </Link>
-              <Link
-                href="#"
-                variant="subtitle1"
-                color="inherit"
-                display="block"
-              >
-                Menu Item 2
-              </Link>
-              <Link
-                href="#"
-                variant="subtitle1"
-                color="inherit"
-                display="block"
-              >
-                Menu Item 3
-              </Link>
-            </Box>
-          </Grid>
-
-          {/* Column 2 */}
-          <Grid item xs={8} sm={2}>
-            <Typography variant="h6" gutterBottom>
-              Column 2 Heading
-            </Typography>
-            <Box>
-              <Link
-                href="#"
-                variant="subtitle1"
-                color="inherit"
-                display="block"
-              >
-                Menu Item 4
-              </Link>
-              <Link
-                href="#"
-                variant="subtitle1"
-                color="inherit"
-                display="block"
-              >
-                Menu Item 5
-              </Link>
-              <Link
-                href="#"
-                variant="subtitle1"
-                color="inherit"
-                display="block"
-              >
-                Menu Item 6
-              </Link>
-            </Box>
-          </Grid>
-
-          {/* Column 3 */}
-          <Grid item xs={8} sm={2}>
-            <Typography variant="h6" gutterBottom>
-              Column 3 Heading
-            </Typography>
-            <Box>
-              <Link
-                href="#"
-                variant="subtitle1"
-                color="inherit"
-                display="block"
-              >
-                Menu Item 7
-              </Link>
-              <Link
-                href="#"
-                variant="subtitle1"
-                color="inherit"
-                display="block"
-              >
-                Menu Item 8
-              </Link>
-              <Link
-                href="#"
-                variant="subtitle1"
-                color="inherit"
-                display="block"
-              >
-                Menu Item 9
-              </Link>
-            </Box>
-          </Grid>
-
-          {/* Empty right column */}
-          <Grid item xs={2} sm={2} />
+          {footerColumns.map((column, index) => (
+            <Grid item xs={12} sm={2} key={index}>
+              <Typography variant="h6" gutterBottom color="primary">
+                {column.heading}
+              </Typography>
+              <Box>
+                {column.links.map((link, index) => (
+                  <Link
+                    href="#"
+                    variant="body1"
+                    color="primary"
+                    display="block"
+                    key={index}
+                  >
+                    {link}
+                  </Link>
+                ))}
+              </Box>
+            </Grid>
+          ))}
         </Grid>
       </Box>
     </footer>

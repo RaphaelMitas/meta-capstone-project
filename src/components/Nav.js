@@ -1,6 +1,16 @@
-import React from "react";
-import { Box, Container } from "@mui/system";
-import { IconButton, Toolbar, AppBar, Typography, Button } from "@mui/material";
+import React, { useState } from "react";
+import {
+  Button,
+  IconButton,
+  useMediaQuery,
+  Drawer,
+  List,
+  ListItemButton,
+  ListItemText,
+  Typography,
+  useTheme,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 // import { Link } from "react-router-dom";
 
 function NavButton({ href, children, ...props }) {
@@ -11,38 +21,49 @@ function NavButton({ href, children, ...props }) {
   );
 }
 
+const navLinks = [
+  { href: "/", text: "HOME" },
+  { href: "/about", text: "ABOUT" },
+  { href: "/menu", text: "MENU" },
+  { href: "/reservation", text: "RESERVATION" },
+  { href: "/order", text: "ORDER ONLINE" },
+  { href: "/login", text: "LOGIN" },
+  // Add more links as needed
+];
+
 function Nav() {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const handleDrawerToggle = () => {
+    setDrawerOpen(!drawerOpen);
+  };
+
   return (
     <nav>
-      <AppBar position="static" color="white">
-        <Container maxWidth="lg">
-          <Toolbar>
-            <IconButton component="a" href="/">
-              <img src="Logo.svg" alt="logo" width={"100%"} />
-            </IconButton>
-            <Box sx={{ flexGrow: 1 }} />
-            {/* This will push the NavButtons to the right */}
-            <NavButton href="/" color="inherit">
-              HOME
-            </NavButton>
-            <NavButton href="/about" color="inherit">
-              ABOUT
-            </NavButton>
-            <NavButton href="/menu" color="inherit">
-              MENU
-            </NavButton>
-            <NavButton href="/reservation" color="inherit">
-              RESERVATION
-            </NavButton>
-            <NavButton href="/order" color="inherit">
-              ORDER ONLINE
-            </NavButton>
-            <NavButton href="/login" color="inherit">
-              LOGIN
-            </NavButton>
-          </Toolbar>
-        </Container>
-      </AppBar>
+      {isMobile ? (
+        <>
+          <IconButton edge="start" color="inherit" onClick={handleDrawerToggle}>
+            <MenuIcon />
+          </IconButton>
+          <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerToggle}>
+            <List>
+              {navLinks.map((link, index) => (
+                <ListItemButton component="a" href={link.href} key={index}>
+                  <ListItemText primary={link.text} />
+                </ListItemButton>
+              ))}
+            </List>
+          </Drawer>
+        </>
+      ) : (
+        navLinks.map((link, index) => (
+          <NavButton href={link.href} color="inherit" key={index}>
+            {link.text}
+          </NavButton>
+        ))
+      )}
     </nav>
   );
 }
