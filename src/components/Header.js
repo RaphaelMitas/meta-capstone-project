@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "./Nav";
-import { AppBar, Box, Grid, IconButton, Toolbar } from "@mui/material";
+import { AppBar, Grid, IconButton, Toolbar } from "@mui/material";
 
 function Header() {
   return (
