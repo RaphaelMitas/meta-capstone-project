@@ -13,10 +13,10 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 // import { Link } from "react-router-dom";
 
-function NavButton({ href, children, ...props }) {
+function NavButton({ href, children, size, ...props }) {
   return (
-    <Button component="a" href={href} sx={{ mx: 1 }} {...props}>
-      <Typography variant="h5">{children}</Typography>
+    <Button component="a" href={href} sx={{ mx: 1 }} size={size} {...props}>
+      <Typography variant={"h6"}>{children}</Typography>
     </Button>
   );
 }

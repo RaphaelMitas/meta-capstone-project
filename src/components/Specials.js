@@ -45,8 +45,8 @@ const Specials = () => {
   return (
     <Box sx={{ flexGrow: 1, padding: 3 }}>
       <Grid container>
-        <Grid item xs={0} sm={2} /> {/* Empty left column */}
-        <Grid item xs={12} sm={4} width={"100%"}>
+        <Grid item xs={false} sm={1} md={2} /> {/* Empty left column */}
+        <Grid item xs={12} sm={6} md={4} width={"100%"}>
           <Typography variant="h4" gutterBottom sx={{ width: "100%" }}>
             This week's specials!
           </Typography>
@@ -70,9 +70,9 @@ const Specials = () => {
             Online Menu
           </Button>
         </Grid>
-        <Grid item xs={0} sm={2} /> {/* Empty right column */}
-        <Grid item xs={0} sm={2} /> {/* Empty left column */}
-        <Grid item xs={12} sm={8}>
+        <Grid item xs={false} sm={1} md={2} /> {/* Empty right column */}
+        <Grid item xs={false} sm={1} md={2} /> {/* Empty left column */}
+        <Grid xs={12} sm={10} md={8}>
           <Grid container spacing={2} my={2}>
             {specialsData.map((special, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
@@ -116,7 +116,7 @@ const Specials = () => {
             ))}
           </Grid>
         </Grid>
-        <Grid item xs={0} sm={2} /> {/* Empty right column */}
+        <Grid item xs={false} sm={1} md={2} /> {/* Empty right column */}
       </Grid>
     </Box>
   );

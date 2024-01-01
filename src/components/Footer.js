@@ -31,17 +31,17 @@ function Footer() {
       >
         <Grid container spacing={2}>
           {/* Empty left column */}
-          <Grid item xs={0} sm={2} />
+          <Grid item xs={false} sm={1} md={2} />
 
           {/* Image on the left */}
-          <Grid item xs={12} sm={2}>
+          <Grid item xs={12} sm={2.5} md={2}>
             {/* Replace with your actual image */}
             <img src="Logo.svg" alt="Brand" style={{ maxWidth: "100%" }} />
           </Grid>
 
           {/* Right side - Menu Items */}
           {footerColumns.map((column, index) => (
-            <Grid item xs={12} sm={2} key={index}>
+            <Grid item xs={12} sm={2.5} md={2} key={index}>
               <Typography variant="h6" gutterBottom color="primary">
                 {column.heading}
               </Typography>

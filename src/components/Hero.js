@@ -7,8 +7,8 @@ const Hero = () => {
   return (
     <Box sx={{ backgroundColor: theme.palette.primary.main, width: "100%" }}>
       <Grid container>
-        <Grid item xs={0} sm={2} /> {/* Empty left column */}
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={false} sm={1} md={2} /> {/* Empty left column */}
+        <Grid item xs={12} sm={5} md={4}>
           <Box
             sx={{
               display: "flex",
@@ -74,7 +74,8 @@ const Hero = () => {
         <Grid
           item
           xs={12}
-          sm={2}
+          sm={5}
+          md={4}
           sx={{
             [theme.breakpoints.down("sm")]: {
               display: "none",
@@ -94,7 +95,7 @@ const Hero = () => {
             }}
           />
         </Grid>
-        <Grid item xs={0} sm={2} /> {/* Empty right column */}
+        <Grid item xs={false} sm={1} md={2} /> {/* Empty right column */}
       </Grid>
     </Box>
   );
