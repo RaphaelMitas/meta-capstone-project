@@ -47,7 +47,12 @@ const Specials = () => {
       <Grid container>
         <Grid item xs={false} sm={1} md={2} /> {/* Empty left column */}
         <Grid item xs={12} sm={6} md={4} width={"100%"}>
-          <Typography variant="h4" gutterBottom sx={{ width: "100%" }}>
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{ width: "100%" }}
+            aria-label="This week's specials title"
+          >
             This week's specials!
           </Typography>
         </Grid>
@@ -66,22 +71,24 @@ const Specials = () => {
             color="primaryInverted"
             href="/menu"
             fullWidth={isMobile}
+            aria-label="Online Menu Button"
           >
             Online Menu
           </Button>
         </Grid>
         <Grid item xs={false} sm={1} md={2} /> {/* Empty right column */}
         <Grid item xs={false} sm={1} md={2} /> {/* Empty left column */}
-        <Grid xs={12} sm={10} md={8}>
+        <Grid item xs={12} sm={10} md={8}>
           <Grid container spacing={2} my={2}>
             {specialsData.map((special, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
-                <Card>
+                <Card aria-label={special.title + "-Card"}>
                   <CardMedia
                     component="img"
                     height="140"
                     image={special.imageUrl}
                     alt={special.title}
+                    aria-label="Special image"
                   />
                   <CardContent>
                     <Box
@@ -91,14 +98,27 @@ const Specials = () => {
                         alignItems: "center",
                       }}
                     >
-                      <Typography gutterBottom variant="h5" component="div">
+                      <Typography
+                        gutterBottom
+                        variant="h5"
+                        component="div"
+                        aria-label={special.title + "-title"}
+                      >
                         {special.title}
                       </Typography>
-                      <Typography variant="h6" color="secondary.main">
+                      <Typography
+                        variant="h6"
+                        color="secondary.main"
+                        aria-label={special.title + "-price"}
+                      >
                         {special.price}
                       </Typography>
                     </Box>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      aria-label={special.title + "-description"}
+                    >
                       {special.description}
                     </Typography>
                   </CardContent>
@@ -107,6 +127,7 @@ const Specials = () => {
                       size="small"
                       color="primary"
                       startIcon={<ShoppingCartIcon />}
+                      aria-label={special.title + "-add-to-cart-button"}
                     >
                       Add to Cart
                     </Button>

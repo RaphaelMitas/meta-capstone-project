@@ -36,13 +36,23 @@ function Footer() {
           {/* Image on the left */}
           <Grid item xs={12} sm={2.5} md={2}>
             {/* Replace with your actual image */}
-            <img src="Logo.svg" alt="Brand" style={{ maxWidth: "100%" }} />
+            <img
+              src="Logo.svg"
+              alt="Brand"
+              style={{ maxWidth: "100%" }}
+              aria-label="Brand logo"
+            />
           </Grid>
 
           {/* Right side - Menu Items */}
           {footerColumns.map((column, index) => (
             <Grid item xs={12} sm={2.5} md={2} key={index}>
-              <Typography variant="h6" gutterBottom color="primary">
+              <Typography
+                variant="h6"
+                gutterBottom
+                color="primary"
+                aria-label={column.heading + " Section"}
+              >
                 {column.heading}
               </Typography>
               <Box>
@@ -53,6 +63,7 @@ function Footer() {
                     color="primary"
                     display="block"
                     key={index}
+                    aria-label={"Link to " + link}
                   >
                     {link}
                   </Link>

@@ -21,8 +21,8 @@ function Header() {
                 alignItems: "center",
               }}
             >
-              <IconButton component="a" href="/">
-                <img src="Logo.svg" alt="logo" />
+              <IconButton component="a" href="/" aria-label="Home link">
+                <img src="Logo.svg" alt="logo" aria-label="Brand logo" />
               </IconButton>
               <Nav />
             </Grid>

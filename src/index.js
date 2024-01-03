@@ -12,8 +12,9 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <ThemeProvider theme={theme}>
-    {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
     <CssBaseline />
+    <script src="https://raw.githubusercontent.com/Meta-Front-End-Developer-PC/capstone/master/api.js"></script>
+
     <App />
   </ThemeProvider>
 );

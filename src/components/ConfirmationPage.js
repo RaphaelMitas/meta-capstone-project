@@ -28,10 +28,14 @@ const ConfirmationPage = () => {
         gap: theme.spacing(2),
       }}
     >
-      <Typography variant="h1" color={theme.palette.primary.contrastText}>
+      <Typography
+        variant="h1"
+        color={theme.palette.primary.contrastText}
+        aria-label="Booking status"
+      >
         Booking Confirmed
       </Typography>
-      <Checkmark size="xxLarge" color={theme.palette.primary.contrastText} />
+      <Checkmark size="xxLarge" color={theme.palette.primary.contrastText} aria-label="animated checkmark image"/>
     </Box>
   );
 };

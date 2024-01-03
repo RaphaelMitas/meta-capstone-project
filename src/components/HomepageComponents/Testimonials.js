@@ -42,7 +42,12 @@ const Testimonials = () => {
       <Grid container spacing={0} padding={0}>
         <Grid item xs={false} sm={1} md={2} />
         <Grid item xs={12} sm={10} md={8}>
-          <Typography variant="h4" component="div" sx={{ mb: 2 }}>
+          <Typography
+            variant="h4"
+            component="div"
+            sx={{ mb: 2 }}
+            aria-label="Testimonials title"
+          >
             Testimonials
           </Typography>
           <Box
@@ -55,16 +60,26 @@ const Testimonials = () => {
           >
             {testimonials.map((testimonial, index) => (
               <Box
+                key={`testimonial-` + index}
                 sx={{
                   width: { xs: "100%", sm: "50%", md: "33%", xl: "25%" },
                   p: 1,
                 }}
               >
-                <Card key={index}>
+                <Card>
                   <CardContent sx={{ textAlign: "left" }}>
                     <Box sx={{ display: "flex", alignItems: "center" }}>
-                      <Avatar src={testimonial.image} sx={{ mr: 2 }} />
-                      <Typography gutterBottom variant="h6" component="div">
+                      <Avatar
+                        src={testimonial.image}
+                        sx={{ mr: 2 }}
+                        aria-label={`${testimonial.name}'s avatar`}
+                      />
+                      <Typography
+                        gutterBottom
+                        variant="h6"
+                        component="div"
+                        aria-label="Testimonial name"
+                      >
                         {testimonial.name}
                       </Typography>
                     </Box>
@@ -73,8 +88,13 @@ const Testimonials = () => {
                       value={testimonial.rating}
                       precision={0.5}
                       readOnly
+                      aria-label={`Rating of ${testimonial.rating}`}
                     />
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      aria-label="Testimonial text"
+                    >
                       {testimonial.text}
                     </Typography>
                   </CardContent>

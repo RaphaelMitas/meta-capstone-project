@@ -16,15 +16,22 @@ function BookingHero({ activeStep }) {
         alignItems: "center",
         backgroundColor: theme.palette.primary.main,
       }}
+      aria-label="Booking section"
     >
       <Typography
         variant="h2"
         color={theme.palette.primary.contrastText}
         gutterBottom
+        aria-label="Reservation heading"
       >
         RESERVE YOUR TABLE
       </Typography>
-      <Typography variant="subtitle1" color={"#FFF"} gutterBottom>
+      <Typography
+        variant="subtitle1"
+        color={"#FFF"}
+        gutterBottom
+        aria-label="Booking step description"
+      >
         {activeStep === 0 && "Booking Information"}
         {activeStep === 1 && "Contact Information"}
         {activeStep === 2 && "Reservation Summary"}

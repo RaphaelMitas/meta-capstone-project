@@ -44,13 +44,28 @@ function Nav() {
     <nav>
       {isMobile ? (
         <>
-          <IconButton edge="start" color="inherit" onClick={handleDrawerToggle}>
+          <IconButton
+            edge="start"
+            color="inherit"
+            onClick={handleDrawerToggle}
+            aria-label="Open navigation menu"
+          >
             <MenuIcon />
           </IconButton>
-          <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerToggle}>
+          <Drawer
+            anchor="right"
+            open={drawerOpen}
+            onClose={handleDrawerToggle}
+            aria-label="Navigation menu"
+          >
             <List>
               {navLinks.map((link, index) => (
-                <ListItemButton component="a" href={link.href} key={index}>
+                <ListItemButton
+                  component="a"
+                  href={link.href}
+                  key={index}
+                  aria-label={"link to " + link.text}
+                >
                   <ListItemText primary={link.text} />
                 </ListItemButton>
               ))}
@@ -59,7 +74,12 @@ function Nav() {
         </>
       ) : (
         navLinks.map((link, index) => (
-          <NavButton href={link.href} color="inherit" key={index}>
+          <NavButton
+            href={link.href}
+            color="inherit"
+            key={index}
+            aria-label={"link to" + link.text}
+          >
             {link.text}
           </NavButton>
         ))

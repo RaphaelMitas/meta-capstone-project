@@ -261,6 +261,7 @@ function BookingForm({
                           name="time"
                           label="Time*"
                           value={values.time}
+                          aria-label="Select Time"
                           onChange={(event) => {
                             setFieldValue("time", event.target.value);
                           }}
@@ -270,6 +271,9 @@ function BookingForm({
                               key={time.time.format("HH:mm")}
                               value={time.time}
                               disabled={!time.available}
+                              aria-label={
+                                "Select Time: " + time.time.format("HH:mm")
+                              }
                             >
                               {time.time.format("HH:mm")}
                             </MenuItem>
@@ -295,12 +299,19 @@ function BookingForm({
                           name="guests"
                           label="Number of Guests*"
                           value={values.guests}
+                          aria-label="Select Number of Guests"
                           onChange={(event) => {
                             setFieldValue("guests", event.target.value);
                           }}
                         >
                           {[...Array(10).keys()].map((value) => (
-                            <MenuItem key={value + 1} value={value + 1}>
+                            <MenuItem
+                              key={value + 1}
+                              value={value + 1}
+                              aria-label={
+                                "Select Number of Guests: " + (value + 1)
+                              }
+                            >
                               {value + 1}
                             </MenuItem>
                           ))}
@@ -323,6 +334,7 @@ function BookingForm({
                         fullWidth
                         id="firstName"
                         label="First Name*"
+                        aria-label="First Name Input"
                         autoFocus
                         error={touched.firstName && Boolean(errors.firstName)}
                         helperText={touched.firstName && errors.firstName}
@@ -339,6 +351,7 @@ function BookingForm({
                         fullWidth
                         id="lastName"
                         label="Last Name*"
+                        aria-label="Last Name Input"
                         name="lastName"
                         autoComplete="family-name"
                         error={touched.lastName && Boolean(errors.lastName)}
@@ -356,6 +369,7 @@ function BookingForm({
                         fullWidth
                         id="email"
                         label="Email Address*"
+                        aria-label="Email Address Input"
                         name="email"
                         autoComplete="email"
                         error={touched.email && Boolean(errors.email)}
@@ -373,6 +387,7 @@ function BookingForm({
                         fullWidth
                         name="phone"
                         label="Phone Number"
+                        aria-label="Phone Number Input"
                         type="phone"
                         id="phone"
                         autoComplete="tel"
@@ -392,7 +407,11 @@ function BookingForm({
                     {/* Summary */}
 
                     <Grid item xs={10}>
-                      <Typography variant="h6" gutterBottom>
+                      <Typography
+                        variant="h6"
+                        gutterBottom
+                        aria-label="Booking Summary Heading"
+                      >
                         Booking Information
                       </Typography>
                       {Boolean(errors.date) || Boolean(errors.time) ? (
@@ -439,7 +458,11 @@ function BookingForm({
                         </Typography>
                       )}
 
-                      <Typography variant="h6" gutterBottom>
+                      <Typography
+                        variant="h6"
+                        gutterBottom
+                        aria-label="Contact Information Heading"
+                      >
                         Contact Information
                       </Typography>
 
@@ -525,6 +548,7 @@ function BookingForm({
                 <Button
                   disabled={activeStep === 0 || isSubmitting}
                   onClick={handleBack}
+                  aria-label="Back Button"
                 >
                   Back
                 </Button>

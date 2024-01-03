@@ -40,6 +40,7 @@ const Hero = () => {
                 //wrap on overflow
                 sx={{ hyphens: "auto" }}
                 color={theme.palette.primaryInverted.main}
+                aria-label="Restaurant name"
               >
                 Little Lemon
               </Typography>
@@ -48,6 +49,7 @@ const Hero = () => {
                 paragraph
                 color={theme.palette.white.main}
                 marginTop={-4}
+                aria-label="Restaurant location"
               >
                 Chicago
               </Typography>
@@ -56,6 +58,7 @@ const Hero = () => {
                 paragraph
                 color={theme.palette.white.main}
                 maxWidth={"inherit"}
+                aria-label="Restaurant description"
               >
                 We are a family owned Mediterranean restaurant, focused on
                 traditional recipes served with a modern twist.
@@ -67,6 +70,7 @@ const Hero = () => {
                 color="primaryInverted"
                 size="large"
                 sx={{ height: 42 }}
+                aria-label="Reserve a table button"
               >
                 RESERVE A TABLE
               </Button>
