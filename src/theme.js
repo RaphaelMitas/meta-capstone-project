@@ -21,7 +21,7 @@ const theme = createTheme({
     },
     //white
     white: {
-      default: "#EDEFEE",
+      main: "#EDEFEE",
       contrastText: "#333333",
     },
   },

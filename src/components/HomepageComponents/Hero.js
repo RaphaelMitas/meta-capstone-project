@@ -46,7 +46,7 @@ const Hero = () => {
               <Typography
                 variant="subtitle1"
                 paragraph
-                color={theme.palette.white.default}
+                color={theme.palette.white.main}
                 marginTop={-4}
               >
                 Chicago
@@ -54,13 +54,15 @@ const Hero = () => {
               <Typography
                 variant="body1"
                 paragraph
-                color={theme.palette.white.default}
+                color={theme.palette.white.main}
                 maxWidth={"inherit"}
               >
                 We are a family owned Mediterranean restaurant, focused on
                 traditional recipes served with a modern twist.
               </Typography>
               <Button
+                component="a"
+                href="/bookings"
                 variant="contained"
                 color="primaryInverted"
                 size="large"

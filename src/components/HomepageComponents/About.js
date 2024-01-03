@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  Card,
-  CardContent,
-  CardMedia,
-  Grid,
-} from "@mui/material";
+import { Typography, CardMedia, Grid } from "@mui/material";
 
 const About = () => {
   return (
