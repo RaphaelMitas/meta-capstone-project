@@ -29,7 +29,7 @@ const ConfirmationPage = () => {
       }}
     >
       <Typography variant="h1" color={theme.palette.primary.contrastText}>
-        Booking confirmed
+        Booking Confirmed
       </Typography>
       <Checkmark size="xxLarge" color={theme.palette.primary.contrastText} />
     </Box>

@@ -99,12 +99,15 @@ function BookingForm({
 
         // simulate submission after 2 seconds
         setTimeout(() => {
-          if (Math.random() < 0.5) {
-            // redirect to confirmation page
-            window.location.href = "/confirmation";
-          } else {
-            setOpenSnackbar(true);
-          }
+          // for now always redirect to confirmation page
+          window.location.href = "/confirmation";
+
+          // randomly redirect to confirmation page or show error
+          // if (Math.random() < 0.5) {
+          //   window.location.href = "/confirmation";
+          // } else {
+          //   setOpenSnackbar(true);
+          // }
           setSubmitting(false);
         }, 2000);
       }
@@ -389,9 +392,6 @@ function BookingForm({
                     {/* Summary */}
 
                     <Grid item xs={10}>
-                      <Typography variant="h4" gutterBottom>
-                        Booking Summary
-                      </Typography>
                       <Typography variant="h6" gutterBottom>
                         Booking Information
                       </Typography>
@@ -431,11 +431,11 @@ function BookingForm({
 
                       {Boolean(errors.guests) ? (
                         <Typography variant="body1" gutterBottom color="error">
-                          Guests: {errors.guests}
+                          Number of Guests: {errors.guests}
                         </Typography>
                       ) : (
                         <Typography variant="body1" gutterBottom>
-                          Guests: {values.guests}
+                          Number of Guests: {values.guests}
                         </Typography>
                       )}
 
