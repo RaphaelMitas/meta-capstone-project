@@ -25,7 +25,7 @@ const navLinks = [
   { href: "/", text: "HOME" },
   { href: "/about", text: "ABOUT" },
   { href: "/menu", text: "MENU" },
-  { href: "/reservation", text: "RESERVATION" },
+  { href: "/bookings", text: "RESERVATION" },
   { href: "/order", text: "ORDER ONLINE" },
   { href: "/login", text: "LOGIN" },
   // Add more links as needed
