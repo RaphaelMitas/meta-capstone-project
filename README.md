@@ -1,10 +1,28 @@
-# Submission for the Meta Frontend Developer Capstone Professional Certificate Project
+# Meta Front-End Developer Capstone Project
 
-This repository contains my submission for the Meta Frontend Developer Capstone Professional Certificate project. The project demonstrates my understanding and application of key frontend development concepts, including React and several libraries.
+## Certificate
 
-To start the site, follow these steps:
+![Meta Front-End Developer Capstone Certificate](certificate.png)
 
-1. Install the necessary dependencies with the command `npm install`.
-2. Start the local development server with the command `npm start`.
+## About This Project
 
-After running the `npm start` command, the site should open in your default web browser. If it doesn't, you can manually navigate to `http://localhost:3000` (or the port number indicated in your terminal) to view the site.
+This project, part of the Meta Front-End Developer Professional Certificate, showcases a responsive User Interface (UI) using React JS and JavaScript, highlighting my skills in web development.
+
+## Key Technologies
+
+- **React JS (Create React App)**
+- **Figma**
+- **Material-UI (MUI)**
+- **Formik**
+
+## How to Install and Run
+
+1. Clone the repository: `git clone https://github.com/RaphaelMitas/meta-capstone-project.git`
+2. Navigate to the project directory: `cd meta-capstone-project`
+3. Install dependencies: `npm install`
+4. Run the application: `npm start`
+5. Open `http://localhost:3000` in your browser to view the app.
+
+## Project Site
+
+Visit the deployed project at [meta-capstone-project.raphaelmitas.com](https://meta-capstone-project.raphaelmitas.com/).
